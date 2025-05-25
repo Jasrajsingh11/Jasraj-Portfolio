@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jasraj Singh | Portfolio</title>
+  <link rel="stylesheet" href="{% static 'style.css' %}">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+
+</head>
+<body>
+  <nav id="navbar" class="navbar">
+    <div class="left-nav">
+      <h2 class="logo">Portfolio</h2>
+    </div>
+    <ul class="right-nav">
+      <li><a href="#home" class="nav-link"><i class="fa-solid fa-house"></i> Home</a></li>
+      <li><a href="#about" class="nav-link"><i class="fa-solid fa-user"></i> About Me</a></li>
+      <li><a href="#skills" class="nav-link"><i class="fa-solid fa-code"></i> Skills</a></li>
+      <li><a href="#projects" class="nav-link"><i class="fa-solid fa-diagram-project"></i> Projects</a></li>
+      <li><a href="#contact" class="nav-link"><i class="fa-solid fa-rocket"></i> Contact</a></li>
+    </ul>
+  </nav>
+  
+
+<!-- Home Section -->
+<section id="home" class="flex s-around sw-80 m-auto home-section">
+  <!-- Left: Text content -->
+  <div class="home-left flex item-center">
+    <div class="home-content">
+      <h6 class="popinss">Hi, I'm</h6>
+      <h1 class="t-white">Jasraj Singh Matta</h1>
+      <h4 class="popinss">Software Engineer</h4>
+
+      <a href="{% static 'pdf/Django.pdf' %}" target="_blank">
+        <button class="btn popinss">Resume</button>
+      </a>
+      <a class="btn live popinss" id="hireme" href="#contact">Let's Talk</a>
+    </div>
+  </div>
+
+  <!-- Right: Image -->
+  <div class="home-right flex item-center">
+    <img src="{% static 'images/profile.png' %}" alt="Profile" class="profile-img" style="width: 450px; height: auto; border-radius: 50%;" />
+  </div>
+</section>
+
+
+  <!-- About Section -->
+  <section id="about" style="padding: 4rem 2rem; background-color: #0f0f0f;">
+    <h1 class="t-center my-2 t-white f-2" style="font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; font-family: 'Poppins', sans-serif;">About Me</h1>
+    
+    <div class="about-container flex s-around" style="display: flex; justify-content: center;">
+      <div class="about-right flex" style="max-width: 900px; width: 100%; background: #2c2c2c; border-radius: 16px; padding: 2rem; box-shadow: 0 0 20px rgba(0,0,0,0.5);">
+        <div class="about-content" style="width: 100%;">
+          <h1 class="t-white m-b-1 popinss" style="font-size: 2rem; font-weight: 700; color: #ff9900; font-family: 'Poppins', sans-serif;">Jasraj Singh Matta</h1>
+          <p class="t-white popinss" style="font-size: 1.15rem; font-weight: 500; line-height: 1.7; color: #e0e0e0; font-family: 'Poppins', sans-serif;">
+            Dynamic and proactive BSc IT graduate with a strong passion for technology and innovation. Equipped with solid knowledge in Python, data analysis, web development (HTML/CSS/JavaScript), Power BI, Tableau, and SQL. Recently completed studies and now seeking an entry-level position to apply technical skills, contribute to impactful projects, and foster continuous personal and professional growth.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <!-- Skills Section -->
+  <section id="skills" >
+    <h1 class="t-center my-2 t-white f-2" >Skills</h1>
+    <div class="skills-container">
+      <div class="skill-box">HTML</div>
+      <div class="skill-box">Python</div>
+      <div class="skill-box">SQL</div>
+      <div class="skill-box">Power BI</div>
+      <div class="skill-box">Tableau</div>
+      <div class="skill-box">MS Office</div>
+      <div class="skill-box">Communication</div>
+      <div class="skill-box">Analytic Reasoning</div>
+      <div class="skill-box">Data Analysis</div>
+      <div class="skill-box">Excel</div>
+    </div>
+  </section>
+  
+  <!-- Projects Section -->
+<section id="projects">
+    <h1 class="t-center my-2 t-white f-2">Projects</h1>
+    <div class="Projects-container flex s-center">
+      <!-- Expense Manager Project -->
+      <div class="Projects-items flex f-col s-center item-center">
+        <h1 class="t-white popinss">Expense Manager</h1>
+        <p class="t-white popinss">A web app to manage daily expenses with secure login and real-time data updates.</p>
+        <div class="button flex s-around">
+          
+        <a href="https://github.com/Jasrajsingh11/Expense-Manager-WebApp" target="_blank" class="btn mx-1 m-top">GitHub</a>
+        </div>
+      </div>
+  
+      <!-- Python Car Game Project -->
+      <div class="Projects-items flex f-col s-center item-center">
+        <h1 class="t-white popinss">Python Car Game</h1>
+        <p class="t-white popinss">A basic Python car game where players control a car to avoid obstacles and collect points. Built using Pygame, it features simple graphics, movement controls, and increasing difficulty.</p>
+        <div class="button flex s-around">
+          <a href="https://github.com/Jasrajsingh11/python-car-game.git" target="_blank" class="btn mx-1 m-top">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="m-b-1">
+    <h1 class="t-center my-2 t-white f-2">Contact Me</h1>
+    <div class="contact-left flex s-center item-center">
+      <div class="form" id="contactform">
+        <form method="post">
+          {% csrf_token %}
+          <input type="text" name="name" class="popinss" placeholder="Enter Your Name" required>
+          <input type="email" name="email" class="popinss" placeholder="Enter Your Email" required>
+          <input type="tel" name="number" class="popinss" placeholder="Enter Your Phone" required>
+          <textarea name="content" class="popinss" cols="30" rows="10" placeholder="Enter Your Message"></textarea>
+          <button type="submit" class="btn popinss" id="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer id="footer">
+    
+    <ul class="social-links">
+      <li>
+        <a href="https://www.linkedin.com/in/jasraj-singh-matta-a3307b333" target="_blank">
+          <i class="fa-brands fa-linkedin-in"></i>
+        </a>
+      </li>
+      <li>
+        <a href="https://github.com/Jasrajsingh11" target="_blank">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </li>
+    </ul>
+
+    <p class="t-center popinss">&copy; All Rights Reserved - <span class="cpy-white popinss">Jasraj Singh Matta</span></p>
+  </footer>
+</body>
+</html>
